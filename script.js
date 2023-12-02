@@ -109,7 +109,7 @@ $(document).ready(function () {
             $('#apiData').html(`
                 <h2 id="songTitle">${firstArtist.name}</h2>
                 <img src="${imageUrl}" alt="Artist Image" style="max-width: 300px;">
-                <p> <a href="${firstArtist.external_urls.spotify}" target="_blank"><img src="song.png" id="song"></a></p>
+                <p> <a href="${firstArtist.external_urls.spotify}" target="_blank"><img src="assets/song.png" id="song"></a></p>
                 <p><label id="subtitle">Genres: </label> ${firstArtist.genres.join(', ')}</p>
                 <p><label id="subtitle">Followers: </label> ${firstArtist.followers.total}</p>
                 <p><label id="subtitle">Popularity: </label> ${firstArtist.popularity}</p>   
