@@ -1,4 +1,3 @@
-// script.js
 function myFunction(x) {
     x.style.background = "#F0F0F0";
     x.style.border = "1px solid black";
@@ -67,17 +66,21 @@ $(document).ready(function () {
     function clearData() {
         const apiDataDiv = $('#apiData');
         const searchTermDiv = $('#searchTerm');
+        const searchTypeDiv = $('#searchType');
 
         if (apiDataDiv.children().length > 0) {
             apiDataDiv.empty();
             searchTermDiv.val('');
+            searchTypeDiv.val('');
 
-        } else if (searchTermDiv.val() !== '') {
+        } else if (searchTermDiv.val() !== '' ) {
             searchTermDiv.val('');
+            searchTypeDiv.val('');
+        
         }
         else {
             alert('No data to clear.');
-        }
+        }   
     }
 
     function displayData(data, searchType) {
@@ -89,8 +92,8 @@ $(document).ready(function () {
 
             $('#apiData').html(`
                 <h2 id="songTitle">${firstTrack.name}</h2>
-                <img src="${imageUrl}" alt="Album Cover" style="max-width: 300px;">
-                <p><a href="${firstTrack.external_urls.spotify}" target="_blank"><img src="song.png" id="song"></a></p>
+                <img src="${imageUrl}" alt="Album Cover" style="max-width: 200px;">
+                <p><a href="${firstTrack.external_urls.spotify}" target="_blank"><img src="assets/song.png" id="song"></a></p>
                 <p><label id="subtitle">Artist: </label>${firstTrack.artists[0].name}</p>
                 <p><label id="subtitle">Album:  </label>${firstTrack.album.name}</p>
                 <p><label id="subtitle">Release Date: </label> ${firstTrack.album.release_date}</p>
@@ -104,12 +107,12 @@ $(document).ready(function () {
                 : 'https://via.placeholder.com/150';
 
             $('#apiData').html(`
-                <h2>${firstArtist.name}</h2>
+                <h2 id="songTitle">${firstArtist.name}</h2>
                 <img src="${imageUrl}" alt="Artist Image" style="max-width: 300px;">
                 <p> <a href="${firstArtist.external_urls.spotify}" target="_blank"><img src="song.png" id="song"></a></p>
-                <p>Genres: ${firstArtist.genres.join(', ')}</p>
-                <p>Followers: ${firstArtist.followers.total}</p>
-                <p>Popularity: ${firstArtist.popularity}</p>   
+                <p><label id="subtitle">Genres: </label> ${firstArtist.genres.join(', ')}</p>
+                <p><label id="subtitle">Followers: </label> ${firstArtist.followers.total}</p>
+                <p><label id="subtitle">Popularity: </label> ${firstArtist.popularity}</p>   
             `);
         }
     }
