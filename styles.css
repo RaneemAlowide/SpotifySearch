@@ -1,10 +1,13 @@
-/* styles.css */
 *{
     font-family: 'Courier New', Courier, monospace;
 }
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #132C33, rgb(37, 37, 68));
+    background-image: url(assets/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
 
@@ -19,28 +22,31 @@ body {
 .container {
     max-width: 600px;
     margin: 50px auto;
-    background-color: #F0F0F0;
-    padding: 20px;
-    border-radius: 8px;
+    background-image: url(assets/backgound2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100%; 
+    border-radius: 20px;
     text-align: center; 
-    overflow: auto; /* Add this property to enable scrollbars */
-    max-height: 600px; /* Add a fixed height for the container */
+    overflow: auto;
+    max-height: 600px; 
 }
 
 
 form {
     margin-bottom: 20px;
 }
-.topContainer{
+.topContainer {
     background-color: #9cadb3;
-    border-radius: 8px;
+    border-radius: 0px;
     padding-top: 20px;
-}
-.topContainer:hover {
+    margin: 0;
     box-shadow: 0 0 10px 2px #51C4D3;
-    transition: transform 0.3s; 
- 
+    width: 100%;
 }
+
+
 #title{
     color: #161A30;
     margin-bottom: 0px;
@@ -76,15 +82,15 @@ button {
     background-color: #9cadb3;
     border: none;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 50px;
     margin-right: 10px;
     margin-bottom: 10px;
 }
 
 button:hover {
-    background-color: #126E82;
+    background-color: #E975AA;
     transition: transform 0.6s;
-    box-shadow: 0 0 10px  #126E82;
+    box-shadow: 0 0 10px 5px #E975AA;
 }
 
 #apiData {
@@ -95,8 +101,8 @@ button:hover {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
-    background-color: #F5B17B;
-    color: #fff;
+    background-color: #ECBA47;
+    color: white;
     border: none;
     cursor: pointer;
 }
@@ -114,25 +120,21 @@ button:hover {
 
 #searchType{
     padding: 3px;
-    background-color: #126E82;
+    background-color: #E975AA;
     color: white;
     margin-bottom: 20px;
     height: 35px;
     width: 120px;
     border-radius: 8px;
-    border: 1px outset#126E82;
+    border: 1px outset #E975AA;
     margin-right: 10px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
-#searchType:hover {
-    background-color: #0a3f4b;
+#searchType:hover , #searchType:active {
+    background-color: #FDB9E3;
     transition: transform 0.3s; 
-    border: 1px outset#126E82;
-}
-#searchType:active {
-    background-color: #0a3f4b;
-    transition: transform 0.3s; 
-    border: 1px outset #126E82;
+    border: 1px outset#FDB9E3;
 }
 
 #song {
@@ -150,6 +152,39 @@ button:hover {
 #subtitle{
     color: #126E82;
     margin-bottom: 20px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
+}
+
+p{
+    color: #000000;
+    transition: transform 0.3s;
+    font-size: 18px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        max-width: 100%;
+        background-size: 100%; 
+        border-radius: 20px; 
+        margin: 30px;
+        margin-top:40px;
+        overflow: none;
+        max-height: 800px; 
+    }
+
+    #apiForm {
+        padding: 15px; 
+    }
+
+    input {
+        width: 80%; 
+        margin-right: 0; 
+    }
+
+    button {
+        margin-right: 0; 
+    }   
+
 }
