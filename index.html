@@ -6,23 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Spotify Song Info</title>
+    <title>Spotify Search</title>
 </head>
 <body>
     <div class="container">
         <div class="topContainer">
             <h1 id="title">Spotify Search</h1>
             <form id="apiForm">
-                <select id="searchType" name="searchType">
+                <select id="searchType" name="searchType" required aria-required="true">
+                    <option value="" id="searchBy" disabled selected>Search by</option>
                     <option value="track">Song Name</option>
                     <option value="artist">Artist Name</option>
                 </select>
-                <input type="text" placeholder="Search" id="searchTerm" name="searchTerm" onfocus="myFunction(this)" onblur="blurFunction(this)" required>
+                <input type="text" placeholder="Search" id="searchTerm" name="searchTerm" onfocus="myFunction(this)" onblur="blurFunction(this)" oninput="inputFunction()" required>
                 <button type="submit" value="Submit"><img width="30" height="30" src="https://img.icons8.com/pastel-glyph/64/search--v2.png" alt="search--v2"/></button>
             </form>
+        
         </div>
         <div id="apiData"></div>
         <button id="clearData">Clear Data</button>
+       
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
